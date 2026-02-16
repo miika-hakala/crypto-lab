@@ -412,6 +412,113 @@ sudo nvidia-smi -pl 80   # Power limit (ai-2)
 
 ---
 
+## DEC-011: CPU Mining vs Strategic CPU Utilization
+
+**Date:** 2026-02-16
+**Status:** Accepted
+**Phase:** Automation (Phase 2)
+
+### Context
+
+CPU mining profitability is negligible to negative on modern consumer hardware:
+- RandomX (Monero): ~$0.10-0.50/day per 12-16 core CPU
+- Electricity cost typically exceeds earnings
+- GPU mining delivers 50-100x better performance per watt
+
+However, the cluster CPUs (ai-1, ai-2) remain idle during GPU-only mining operations. The question arises: **Are there higher-value CPU workloads than mining?**
+
+Additionally, existing infrastructure (Ollama AI, crawler) suggests potential synergies for CPU-intensive tasks beyond cryptocurrency mining.
+
+### Decision
+
+**Approved:** Exploration of strategic CPU utilization alternatives to mining.
+
+**Scope of approval:**
+- Documentation of 6 CPU workload alternatives (completed in STRATEGY.md)
+- Analysis of ROI potential vs CPU mining baseline
+- Ranking by strategic fit with existing infrastructure
+
+**Not approved (yet):**
+- Implementation of any specific alternative
+- Resource allocation for development
+- Pivot away from GPU mining focus
+
+**Rationale for exploration:**
+1. CPU mining baseline is effectively zero ROI
+2. Any positive-ROI CPU workload is categorically better
+3. Existing infrastructure (AI, crawler) creates natural synergies
+4. Opportunistic CPU utilization doesn't conflict with GPU mining experiments
+
+### Rationale
+
+**Why explore alternatives:**
+1. **CPU mining is economically unviable** — Even best-case scenarios (Monero RandomX) yield <$0.50/day, often negative after electricity
+2. **Idle CPU capacity exists** — During GPU mining, CPUs sit at <10% utilization
+3. **Infrastructure synergies** — Existing Ollama (AI) and crawler infrastructure create natural extension points
+4. **Low opportunity cost** — Documentation-only analysis requires minimal investment
+5. **Data-driven approach** — Consistent with project philosophy (test, measure, decide)
+
+**Why not commit to implementation yet:**
+1. **GPU mining focus maintained** — Phase 2 (Automation) still in progress
+2. **Insufficient data** — Need market validation for specific alternatives
+3. **Resource constraints** — Development time is opportunity cost vs GPU optimization
+4. **Phase discipline** — Avoid scope creep during active GPU experiments
+
+### Consequences
+
+**Positive:**
+- ✅ Documented alternative compute strategies for future reference
+- ✅ Framework for evaluating CPU workload ROI vs mining baseline
+- ✅ Identified high-synergy options (data enrichment, AI inference)
+- ✅ No resource commitment required (documentation-only)
+- ✅ Preserves optionality for future pivots if GPU mining fails
+
+**Negative:**
+- ⚠️ Potential distraction from GPU mining focus
+- ⚠️ Creates additional decision paralysis (more options to evaluate)
+- ⚠️ No immediate revenue impact (exploration, not execution)
+
+**Neutral:**
+- Analysis reveals arbitrage/trading as highest potential ROI but also highest risk (noted for awareness)
+
+### Implementation
+
+**Completed:**
+- [x] CPU alternatives section added to STRATEGY.md
+- [x] 6 alternatives documented with ROI analysis
+- [x] Strategic fit ranking completed
+- [x] Decision recorded in DECISIONS.md (DEC-011)
+
+**Not started (pending future decision):**
+- [ ] Market validation for specific alternatives
+- [ ] Technical feasibility prototyping
+- [ ] Resource allocation for development
+- [ ] Customer/revenue source identification
+
+**Next steps (if pursued):**
+1. Complete Phase 2 (GPU mining automation)
+2. Evaluate Phase 2 results (go/no-go for GPU mining)
+3. If GPU mining is not viable → prioritize CPU alternatives
+4. If GPU mining is viable → CPU alternatives remain opportunistic
+
+### Future Review
+
+**Review triggers:**
+- **End of Phase 2** — If GPU mining shows negative ROI, re-evaluate CPU alternatives as primary strategy
+- **Infrastructure changes** — If new workloads emerge (e.g., large-scale transcription needs), reassess fit
+- **Market opportunities** — If customer/revenue source appears for specific alternative
+- **Quarterly review** — General strategic reassessment
+
+**Success criteria for implementation (if pursued later):**
+- Identified revenue source or customer for specific workload
+- Technical feasibility validated (prototype or proof-of-concept)
+- ROI projection >10x CPU mining baseline (minimum threshold)
+- Development effort <2 weeks for MVP
+
+**Decision owner:** Repository Maintainer
+
+---
+
 ## Template for Future Decisions
 
 ```markdown
@@ -461,5 +568,5 @@ sudo nvidia-smi -pl 80   # Power limit (ai-2)
 ---
 
 **Last Updated:** 2026-02-16
-**Total Decisions:** 10
-**Active Decisions:** 10
+**Total Decisions:** 11
+**Active Decisions:** 11

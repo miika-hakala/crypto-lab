@@ -52,12 +52,18 @@ Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
    - Need wallet creation
    - Status: PENDING
 
+4. **CPU Strategic Utilization Analysis** ✅
+   - CPU alternatives to mining documented (STRATEGY.md)
+   - 6 workload options analyzed vs CPU mining baseline
+   - Decision DEC-011 recorded (exploration approved, no implementation yet)
+   - Status: COMPLETE (documentation-only)
+
 ### Queued:
-4. **Wallet Setup** ⏸️
+5. **Wallet Setup** ⏸️
    - Waiting for final algorithm decision
    - Will create after repo bootstrap
 
-5. **First 72h Test** ⏸️
+6. **First 72h Test** ⏸️
    - Blocked by wallet creation
    - Target: Pyrin on ai-1 (RTX 3060)
 
