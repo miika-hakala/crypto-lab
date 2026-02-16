@@ -54,12 +54,16 @@ Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
 
 ### Queued:
 4. **Wallet Setup** ⏸️
-   - Waiting for final algorithm decision
-   - Will create after repo bootstrap
+   - Algorithm selected: Ergo (Autolykos2)
+   - Runbooks created: ERG_WALLET_CREATION.md, ERG_72H_TEST.md
+   - Status: Awaiting wallet creation by user
 
-5. **First 72h Test** ⏸️
-   - Blocked by wallet creation
-   - Target: Pyrin on ai-1 (RTX 3060)
+5. **EXP-001: First 72h Test** ⏸️
+   - Algorithm: Ergo (Autolykos2)
+   - Pool: HeroMiners (ergo.herominers.com:1180)
+   - Nodes: gpu-node-1 (RTX 3060) + gpu-node-2 (GTX 1660 S)
+   - Status: Pending wallet address
+   - Runbook: docs/runbooks/ERG_72H_TEST.md
 
 ---
 

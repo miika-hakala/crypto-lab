@@ -1,6 +1,6 @@
 # Safety & Security Protocols — crypto-lab
 
-**Version:** 1.0
+**Version:** 1.1
 **Last Updated:** 2026-02-16
 **Criticality:** MANDATORY
 
@@ -50,7 +50,63 @@ Before mining:
 
 ---
 
-### 2. SSH and Network Security
+### 2. Wallet Safety (Self-Custody)
+
+#### Critical Requirements for Mining Wallets
+
+**MANDATORY for all mining experiments:**
+
+- ✅ **Self-custody wallet ONLY** — You control the private keys
+- ✅ **Seed phrase NEVER on cluster** — Not on ai-1, ai-2, dev-main, or any connected device
+- ✅ **Public receive address ONLY in mining config** — Never private keys
+- ✅ **Paper backup of seed phrase** — Written offline, stored securely
+- ✅ **Wallet recovery tested** — Verified before mining starts
+
+#### Wallet Selection Guidelines
+
+**For Ergo (ERG) Mining:**
+- ✅ **Nautilus Wallet** (browser extension) — Primary recommendation
+- ✅ **Ergo Mobile Wallet** (iOS/Android) — Alternative option
+- ❌ **NOT Yoroi** — This is a Cardano wallet, does NOT support Ergo
+- ❌ **NOT MetaMask** — Ethereum only, does NOT support Ergo
+
+**For other cryptocurrencies:**
+- Verify wallet supports the specific coin/algorithm
+- Use official wallets from coin's official website
+- Avoid exchange wallets for mining payouts (you don't control keys)
+
+#### What Goes in Mining Config
+
+**SAFE to use in miner command:**
+```bash
+--user 9f4QP8...ABC123.worker-name    # Public receive address only
+```
+
+**NEVER in mining config:**
+```bash
+--user <seed phrase>           # ❌ ABSOLUTELY NEVER
+--user <private key>           # ❌ ABSOLUTELY NEVER
+--pass <wallet password>       # ❌ NOT NEEDED (pool password is usually just "x")
+```
+
+#### Pre-Mining Wallet Checklist
+
+Before starting any mining test (e.g., EXP-001):
+- [ ] Wallet created on secure device (NOT mining nodes)
+- [ ] Seed phrase (12-24 words) written on paper
+- [ ] Seed phrase stored in secure physical location
+- [ ] Wallet recovery tested (restored successfully)
+- [ ] Public receive address obtained (verify format per coin)
+- [ ] Test transaction sent to address (optional but recommended)
+- [ ] **VERIFIED:** No seed phrase files on cluster nodes
+- [ ] **VERIFIED:** No private key files on cluster nodes
+- [ ] **VERIFIED:** Only public address in miner config files
+
+**See:** `docs/runbooks/ERG_WALLET_CREATION.md` for detailed Ergo wallet setup guide.
+
+---
+
+### 3. SSH and Network Security
 
 #### SSH Configuration
 
@@ -85,7 +141,7 @@ PermitRootLogin no                  # No root SSH
 
 ---
 
-### 3. Software Security
+### 4. Software Security
 
 #### Binary Verification
 
@@ -128,7 +184,7 @@ PermitRootLogin no                  # No root SSH
 
 ---
 
-### 4. Data Security and Privacy
+### 5. Data Security and Privacy
 
 #### What Gets Committed to Git:
 
@@ -539,7 +595,7 @@ By proceeding with mining experiments, you acknowledge:
 **Sign-off:**
 - Name: [Repository Owner]
 - Date: 2026-02-16
-- Version: 1.0
+- Version: 1.1
 
 ---
 
@@ -549,4 +605,4 @@ By proceeding with mining experiments, you acknowledge:
 
 **Last Updated:** 2026-02-16
 **Next Review:** 2026-03-16 (monthly)
-**Version:** 1.0
+**Version:** 1.1
