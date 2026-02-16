@@ -18,16 +18,18 @@
 
 ---
 
-## Current Phase: Phase 2 (Automation)
+## Current Phase: Phase 2 (Automation) — 72h Test Preparation
 
-### Phase 2 Progress: 15% Complete
+### Phase 2 Progress: 25% Complete
 
 ```
 Bootstrap ████████████████████ 100%
-Automation ███░░░░░░░░░░░░░░░░  15%
+Automation █████░░░░░░░░░░░░░░  25%
 Optimization ░░░░░░░░░░░░░░░░░░   0%
 Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
 ```
+
+**Current Focus:** Ergo (Autolykos2) 72h production test preparation
 
 ---
 
@@ -46,20 +48,22 @@ Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
    - Automate data fetching
    - Status: PENDING
 
-3. **Algorithm Selection** 🔄
-   - Benchmark data available
-   - Top candidate: Pyrin on RTX 3060
-   - Need wallet creation
-   - Status: PENDING
+3. **Algorithm Selection** ✅
+   - Benchmark data analyzed
+   - **SELECTED:** Ergo (Autolykos2) on both GPUs
+   - Decision: Highest confirmed profit/day (Prof24=259)
+   - Status: COMPLETE
 
 ### Queued:
-4. **Wallet Setup** ⏸️
-   - Waiting for final algorithm decision
-   - Will create after repo bootstrap
+4. **Wallet Setup** 🔄
+   - Algorithm selected: Ergo (ERG)
+   - Wallet options: Nautilus (browser) or Ergo Mobile Wallet
+   - Status: PENDING creation
 
-5. **First 72h Test** ⏸️
+5. **First 72h Test** 🔄
    - Blocked by wallet creation
-   - Target: Pyrin on ai-1 (RTX 3060)
+   - Target: Ergo (Autolykos2) on both GPUs (ai-1 + ai-2)
+   - Expected: 152.71 MH/s combined, ~$0.50-0.80/day
 
 ---
 
@@ -119,7 +123,8 @@ Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
 | **Flux** | **41.1 Sol/s @ 111W** | 17.6 Sol/s @ 70W | ai-1 |
 | **Pyrin** | **3113.51 MH/s @ 112W** | 1137.33 MH/s @ 74W | ai-1 |
 
-**Best Overall:** Pyrin on RTX 3060 (27.8 MH/W efficiency)
+**Best Efficiency:** Pyrin on RTX 3060 (27.8 MH/W efficiency)
+**Selected for 72h Test:** Ergo (Autolykos2) — highest confirmed profit/day
 
 ---
 
@@ -240,24 +245,28 @@ Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
 
 ---
 
-## Decision Pending
+## Decision Made: Ergo (Autolykos2) ✅
 
-**Next Major Decision: Algorithm Selection for 72h Test**
+**Decision:** Ergo (ERG) selected for 72h production test
 
-**Options:**
-1. **Pyrin** (Recommended)
-   - Pros: Best efficiency (27.8 MH/W), stable temps, good hashrate
-   - Cons: Less established than some alternatives
-2. **Autolykos2 (Ergo)**
-   - Pros: Well-established coin, good hashrate (103 MH/s)
-   - Cons: Lower efficiency than Pyrin
-3. **KawPow (Ravencoin)**
-   - Pros: Large market cap ($100M), established
-   - Cons: Lower efficiency, higher temps on ai-2
+**Rationale:**
+1. ✅ **Highest confirmed profit/day** (Prof24=259 vs Ravencoin 239)
+2. ✅ **Active market** ($27.4M market cap, liquid)
+3. ✅ **Safe temperatures** (62°C ai-1, 72°C ai-2)
+4. ✅ **Both GPUs compatible** (ai-1: 103 MH/s, ai-2: 49.6 MH/s)
+5. ✅ **Proven stability** from benchmarks
 
-**Decision Maker:** Repository Owner
-**Deadline:** Before wallet creation
-**Impact:** Determines Phase 2 success metrics
+**Alternatives considered:**
+- **Pyrin:** Best efficiency (27.8 MH/W) but **unknown profitability** (WhatToMine shows $0/day)
+- **Ravencoin:** Lower profit (Prof24=239), ai-2 runs hot (75°C)
+
+**Expected Results:**
+- Combined hashrate: 152.71 MH/s
+- Combined power: 198W
+- Revenue: ~$0.50-0.80/day
+- Net profit: ~$0.02-0.32/day (after electricity)
+
+**Next Blocker:** Ergo wallet creation (Nautilus or Ergo Mobile Wallet)
 
 ---
 

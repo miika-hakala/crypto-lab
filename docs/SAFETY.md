@@ -48,6 +48,25 @@ Before mining:
 - [ ] Only public address added to miner config
 - [ ] Backup procedure documented
 
+#### Supported Wallets by Cryptocurrency
+
+**Ergo (ERG) — For 72h Test:**
+- ✅ **Nautilus Wallet** (browser extension, recommended) — https://nautilus.com
+- ✅ **Ergo Mobile Wallet** (official iOS/Android app)
+- ✅ **Ergo Desktop Wallet** (full node, advanced users)
+- ❌ **Yoroi Wallet** — Does NOT support Ergo (Cardano only, common mistake)
+
+**Ravencoin (RVN):**
+- ✅ **Ravencoin Core** (official desktop wallet)
+- ✅ **Trust Wallet** (mobile)
+- ✅ **Exodus** (multi-currency)
+
+**Pyrin (PYI):**
+- ✅ **Pyrin Desktop Wallet** (official)
+- ✅ **pyrinwallet** (CLI, requires full node)
+
+**IMPORTANT:** Always verify wallet compatibility before creating. Yoroi is frequently confused with Ergo wallets but does NOT support ERG.
+
 ---
 
 ### 2. SSH and Network Security
