@@ -125,27 +125,62 @@ Each experiment entry should include:
 
 ### Conclusions
 
-1. **Algorithm Selection:** Pyrin is clear winner for efficiency
-2. **GPU Allocation:**
+1. **Best Efficiency:** Pyrin (27.80 MH/W) but unknown market profitability
+2. **Best Confirmed Profit:** Ergo (Autolykos2) - Prof24=259, active market
+3. **GPU Allocation:**
    - ai-1 (RTX 3060): Best for most algorithms
    - ai-2 (GTX 1660 SUPER): Competitive on KawPow, thermal concerns
-3. **Next Steps:**
-   - Create Pyrin wallet
-   - Select mining pool
-   - Launch 72h test on Pyrin @ ai-1
+4. **Decision:** Selected Ergo (Autolykos2) for 72h test based on highest confirmed profit/day
+5. **Next Steps:**
+   - Create Ergo wallet (Nautilus or Ergo Mobile)
+   - Select pool (HeroMiners recommended)
+   - Launch 72h test on Ergo with both GPUs
 
-**Decision Impact:** DEC-001 validated (use both GPUs), new data for Phase 2 planning
+**Decision Impact:** DEC-001 validated (use both GPUs), Ergo selected over Pyrin due to proven profitability
 
 ---
 
 ## Future Experiments (Planned)
 
-### EXP-002: Pyrin 72h Production Test
-- **Target:** Validate real-world profitability
-- **GPU:** ai-1 (RTX 3060)
-- **Duration:** 72 hours
-- **Metrics:** Actual earnings vs estimates, stability, thermal profile
-- **Status:** ⏸️ Pending wallet creation
+### EXP-002: Ergo (Autolykos2) 72h Production Test
+
+**Status:** 🔄 Pending wallet creation
+**Priority:** HIGH (Phase 2 blocker)
+
+**Objective:**
+Validate real-world mining profitability and stability for Ergo (ERG) using Autolykos2 algorithm over continuous 72-hour period.
+
+**Configuration:**
+- **Coin:** Ergo (ERG)
+- **Algorithm:** Autolykos2
+- **Pool:** HeroMiners (`ergo.herominers.com:1180`)
+- **Miner:** lolMiner v1.98a
+- **GPUs:** Both ai-1 (RTX 3060) + ai-2 (GTX 1660 SUPER)
+- **Power Limits:** 120W (ai-1), 80W (ai-2)
+
+**Expected Performance:**
+| Metric | Expected | Source |
+|--------|----------|--------|
+| Combined hashrate | 152.71 MH/s | Benchmark (ai-1: 103.05, ai-2: 49.66) |
+| Combined power | 198W | Benchmark |
+| ai-1 temp | 62°C | Benchmark |
+| ai-2 temp | 72°C | Benchmark |
+| Revenue/day | $0.50-0.80 | WhatToMine (Prof24=259) |
+| Electricity/day | $0.48 | @$0.10/kWh |
+| Net profit/day | $0.02-0.32 | Estimated |
+
+**Success Criteria:**
+- [ ] 72h uptime >95%
+- [ ] Share acceptance >95%
+- [ ] GPU temps <75°C sustained
+- [ ] Actual revenue within ±20% of estimate
+- [ ] No hardware failures
+
+**Runbook:** `docs/runbooks/ERG_72H_TEST.md`
+
+**Blockers:**
+- ⚠️ Ergo wallet creation (Nautilus browser extension or Ergo Mobile Wallet)
+- Note: Yoroi does NOT support Ergo (common mistake)
 
 ### EXP-003: KawPow Comparison Test
 - **Target:** Compare pool vs solo mining
