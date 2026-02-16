@@ -78,7 +78,7 @@ Each experiment entry should include:
 
 ## Experiments
 
-### EXP-001: Baseline Benchmarking (Discovery Phase)
+### EXP-000: Baseline Benchmarking (Discovery Phase)
 
 **Date:** 2026-02-16
 **Duration:** 3 minutes per algorithm × 5 algorithms × 2 GPUs
@@ -138,14 +138,85 @@ Each experiment entry should include:
 
 ---
 
+### EXP-001: Ergo 72h Production Test (Planned)
+
+**Date:** TBD (Pending wallet creation)
+**Duration:** 72 hours continuous
+**Phase:** Automation (Phase 2)
+**Status:** ⏸️ Awaiting Ergo wallet address
+
+### Configuration
+- **GPUs:** gpu-node-1 (RTX 3060) + gpu-node-2 (GTX 1660 SUPER)
+- **Algorithm:** Autolykos2 (Ergo)
+- **Miner:** lolMiner v1.98a
+- **Pool:** HeroMiners (ergo.herominers.com:1180)
+- **Workers:** ERG_WALLET_ADDRESS_HERE.ai1 and .ai2
+- **Wallet:** [Will be filled after wallet creation]
+- **Runbook:** docs/runbooks/ERG_72H_TEST.md
+
+### Target Performance Metrics
+
+**gpu-node-1 (RTX 3060):**
+- **Expected Hashrate:** ~103 MH/s (from EXP-000 benchmark)
+- **Power Limit:** 120W
+- **Target Temperature:** <75°C
+- **Target Uptime:** >95% (68.4+ hours)
+
+**gpu-node-2 (GTX 1660 SUPER):**
+- **Expected Hashrate:** ~50 MH/s (from EXP-000 benchmark)
+- **Power Limit:** 80W
+- **Target Temperature:** <65°C (watch for thermal issues)
+- **Target Uptime:** >95%
+
+### Success Criteria
+- [ ] Pool connection stable (uptime >95%)
+- [ ] Rejection rate <2%
+- [ ] No thermal throttling events
+- [ ] No miner crashes (or <2 total)
+- [ ] Earnings match profitability estimate (±20%)
+- [ ] Daily net profit >$0
+
+### Results
+**[To be filled after 72h test completes]**
+
+**Performance:**
+- Hashrate (avg gpu-node-1): _______ MH/s
+- Hashrate (avg gpu-node-2): _______ MH/s
+- Power (avg gpu-node-1): _______ W
+- Power (avg gpu-node-2): _______ W
+- Temperature (max gpu-node-1): _______ °C
+- Temperature (max gpu-node-2): _______ °C
+
+**Network:**
+- Accepted Shares: _______
+- Rejected Shares: _______ (____%)
+- Uptime: _______% (_____ hours)
+
+**Financial:**
+- Total ERG Earned: _______ ERG
+- ERG Price at End: $_______ per ERG
+- Total Revenue: $_______
+- Daily Average: $_______/day
+- Variance from Estimate: _____%
+
+**Observations:**
+- [To be documented during test]
+
+**Conclusions:**
+- [To be documented after test]
+- **Decision:** GO / ADJUST / NO-GO (continue Ergo, adjust settings, or switch algorithm)
+
+**See Also:** docs/runbooks/ERG_WALLET_CREATION.md, docs/runbooks/ERG_72H_TEST.md
+
+---
+
 ## Future Experiments (Planned)
 
-### EXP-002: Pyrin 72h Production Test
-- **Target:** Validate real-world profitability
-- **GPU:** ai-1 (RTX 3060)
+### EXP-002: Pyrin 72h Test (Alternative)
+- **Target:** Alternative algorithm if EXP-001 (Ergo) is not profitable
+- **GPU:** gpu-node-1 (RTX 3060) + gpu-node-2 (GTX 1660 S)
 - **Duration:** 72 hours
-- **Metrics:** Actual earnings vs estimates, stability, thermal profile
-- **Status:** ⏸️ Pending wallet creation
+- **Status:** 📋 Planned (if Ergo NO-GO decision)
 
 ### EXP-003: KawPow Comparison Test
 - **Target:** Compare pool vs solo mining
@@ -169,15 +240,16 @@ Each experiment entry should include:
 
 ## Experiment Statistics
 
-### Total Experiments: 1
-- ✅ Completed: 1
+### Total Experiments: 2
+- ✅ Completed: 1 (EXP-000)
 - 🔄 In Progress: 0
-- 📋 Planned: 4
+- ⏸️ Awaiting Start: 1 (EXP-001, pending wallet)
+- 📋 Planned: 4 (EXP-002 through EXP-005)
 - ❌ Failed: 0
 
 ### Phase Breakdown:
-- **Discovery:** 1 completed
-- **Automation:** 0 started
+- **Discovery:** 1 completed (EXP-000)
+- **Automation:** 1 awaiting start (EXP-001)
 - **Optimization:** 0 started
 
 ### GPU Utilization:
@@ -236,11 +308,12 @@ Each experiment entry should include:
 
 **2026-02-16:**
 - Created experiment log template
-- Added EXP-001 baseline benchmarking results
+- Added EXP-000 baseline benchmarking results
+- Added EXP-001 template (Ergo 72h test, awaiting wallet)
 - Planned future experiments EXP-002 through EXP-005
 
 ---
 
 **Log Owner:** Repository Maintainer
-**Next Experiment:** EXP-002 (Pyrin 72h test)
-**Last Entry:** EXP-001
+**Next Experiment:** EXP-001 (Ergo 72h test, awaiting wallet creation)
+**Last Entry:** EXP-000 (completed)
