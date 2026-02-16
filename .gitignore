@@ -76,6 +76,7 @@ profitability.json
 # ============================================================
 output/
 cache/
+bench_results/
 tmp/
 temp/
 *.tmp
