@@ -1,0 +1,218 @@
+# crypto-lab .gitignore
+# Security-first: prevent sensitive data from being committed
+
+# ============================================================
+# SECRETS (CRITICAL - NEVER COMMIT)
+# ============================================================
+.env
+.env.*
+secrets*
+wallet*
+*.key
+*.pem
+private*
+id_rsa*
+*.pgp
+*.gpg
+seed.txt
+mnemonic.txt
+
+# ============================================================
+# MINER BINARIES (DO NOT VERSION CONTROL)
+# ============================================================
+miners/
+*.tar.gz
+*.zip
+*.bin
+*.exe
+*.AppImage
+
+# Specific miner directories
+lolminer/
+t-rex/
+trex-miner/
+bzminer/
+gminer/
+
+# ============================================================
+# LOGS AND RUNTIME DATA
+# ============================================================
+*.log
+logs/
+*.log.*
+
+# Mining logs
+mining.log
+mining-*.log
+miner.log
+pool.log
+
+# GPU monitoring logs
+nvidia-smi.log
+gpu-stats.log
+thermal-*.log
+
+# Benchmark logs
+bench*.log
+benchmark-*.log
+
+# ============================================================
+# DATA FILES (REGENERATED FROM API)
+# ============================================================
+*.csv
+*.json
+!docs/**/*.json
+!package.json
+!package-lock.json
+
+# Specific data files
+coins_top.json
+whattomine_coins.json
+coinwarz_data.json
+profitability.json
+
+# ============================================================
+# TEMPORARY AND CACHE FILES
+# ============================================================
+output/
+cache/
+tmp/
+temp/
+*.tmp
+*.cache
+*.swp
+*.swo
+*~
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# ============================================================
+# IDE AND EDITOR FILES
+# ============================================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# ============================================================
+# CONFIGURATION (LOCAL OVERRIDES)
+# ============================================================
+config.local.*
+.config.local
+*local.config
+override.conf
+
+# ============================================================
+# BACKUP FILES
+# ============================================================
+*.bak
+*.backup
+*.old
+*-backup
+*-old
+
+# ============================================================
+# EXPERIMENTAL / WORK IN PROGRESS
+# ============================================================
+scratch/
+experiments/
+wip/
+test-output/
+
+# ============================================================
+# OS-SPECIFIC
+# ============================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================================
+# NODE / NPM (IF USED)
+# ============================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================
+# MISCELLANEOUS
+# ============================================================
+*.pid
+*.seed
+*.pid.lock
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Jupyter notebooks (checkpoints)
+.ipynb_checkpoints/
+
+# ============================================================
+# EXCEPTIONS (EXPLICITLY TRACK THESE)
+# ============================================================
+# Documentation JSON files are allowed
+!docs/**/*.json
+
+# Example configuration templates (no secrets)
+!config.example.*
+!*.example
+
+# README files always tracked
+!README.md
+!**/README.md
+
+# ============================================================
+# NOTES FOR CONTRIBUTORS
+# ============================================================
+# If you need to commit a file that matches a pattern above:
+# 1. Verify it contains NO secrets
+# 2. Add explicit exception above with comment
+# 3. Use: git add -f <file> (force add)
+# 4. Document why in commit message
