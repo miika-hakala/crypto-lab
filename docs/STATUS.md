@@ -1,7 +1,7 @@
 # Project Status — crypto-lab
 
 **Last Updated:** 2026-02-16
-**Current Phase:** Bootstrap → Automation Transition
+**Current Phase:** Automation (Phase 2)
 
 ---
 
@@ -11,7 +11,7 @@
 |--------|--------|-------|
 | **Phase** | 🔄 Automation (Phase 2) | Bootstrap complete |
 | **Mining Status** | ⏸️ Not Started | Awaiting wallet setup |
-| **Profitability Runner** | 🟡 In Progress | Manual runner complete |
+| **Profitability Runner** | ✅ Imported | Scripts in repo (PR #2) |
 | **Auto-Switcher** | ⏸️ Not Implemented | Phase 3 feature |
 | **Wallet** | ⏸️ Not Created | Pending algorithm selection |
 | **Hardware** | ✅ Operational | Both GPUs ready |
@@ -20,11 +20,11 @@
 
 ## Current Phase: Phase 2 (Automation)
 
-### Phase 2 Progress: 15% Complete
+### Phase 2 Progress: 25% Complete
 
 ```
 Bootstrap ████████████████████ 100%
-Automation ███░░░░░░░░░░░░░░░░  15%
+Automation █████░░░░░░░░░░░░░░  25%
 Optimization ░░░░░░░░░░░░░░░░░░   0%
 Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
 ```
@@ -40,11 +40,11 @@ Scale ░░░░░░░░░░░░░░░░░░░░░░   0%
    - Security protocols defined
    - Status: COMPLETE
 
-2. **Profit-Run Integration** 🔄
+2. **Profit-Run Integration** ✅
+   - Scripts imported to crypto-lab repo (PR #2)
    - Manual profitability analysis complete
-   - Need to move to crypto-lab repo
-   - Automate data fetching
-   - Status: PENDING
+   - Automate data fetching (next step)
+   - Status: COMPLETE
 
 3. **Algorithm Selection** 🔄
    - Benchmark data available
